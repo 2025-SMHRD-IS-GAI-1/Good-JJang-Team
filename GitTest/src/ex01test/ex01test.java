@@ -8,6 +8,8 @@ public class ex01test {
 		System.out.println("test");
 		
 		System.out.println("야호");
+		
+		System.out.println("뒤짐");
 	}
 
 }

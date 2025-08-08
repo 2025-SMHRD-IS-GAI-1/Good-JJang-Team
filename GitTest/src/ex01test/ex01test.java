@@ -18,6 +18,8 @@ public class ex01test {
 		System.out.println("ㄹㅇ마지막");
 		
 		System.out.println("진짜진짜마지막");
+		
+		System.out.println("호우쉣");
 	}
 
 }

@@ -20,6 +20,8 @@ public class ex01test {
 		System.out.println("진짜진짜마지막");
 		
 		System.out.println("호우쉣");
+		
+		System.out.println("에휴.... Git..");
 	}
 
 }

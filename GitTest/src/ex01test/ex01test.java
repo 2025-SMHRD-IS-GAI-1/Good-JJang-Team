@@ -16,6 +16,8 @@ public class ex01test {
 		System.out.println("끼얏호우");
 	
 		System.out.println("ㄹㅇ마지막");
+		
+		System.out.println("진짜진짜마지막");
 	}
 
 }

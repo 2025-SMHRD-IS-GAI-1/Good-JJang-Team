@@ -14,7 +14,8 @@ public class ex01test {
 		System.out.println("진짜 뒤짐");
 		
 		System.out.println("끼얏호우");
-		
+	
+		System.out.println("ㄹㅇ마지막");
 	}
 
 }

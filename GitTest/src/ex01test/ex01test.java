@@ -6,7 +6,8 @@ public class ex01test {
 		System.out.println("테스트1");
 		
 		System.out.println("test");
-
+		
+		System.out.println("야호");
 	}
 
 }

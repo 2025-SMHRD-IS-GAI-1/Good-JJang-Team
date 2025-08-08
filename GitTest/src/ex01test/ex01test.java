@@ -10,6 +10,8 @@ public class ex01test {
 		System.out.println("야호");
 		
 		System.out.println("뒤짐");
+
+		System.out.println("진짜 뒤짐");
 	}
 
 }

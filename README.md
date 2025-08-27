@@ -1,10 +1,13 @@
 # Hello Board Game (팀 이름:코드 유기견 보호소)
-> 이 프로젝트는 저희가 배운 JAVA와 Oracle로 만든 간단한 미니게임 들어있는 주사위 보드 게임입니다.
+> 자바(JAVA)와 Oracle DB를 활용하여 제작한 팀 대전 기반 보드게임입니다.
+> 플레이어는 회원가입/로그인을 통해 입장하며, 주사위를 굴려 이동하고 도착한 칸에 따라
+> 4가지 미니게임(퀴즈,홀짝게임, Up&Down, 넌센스 퀴즈)을 플레이합니다.
+> 각 팀은 보드판을 먼저 완주하는 것을 목표로 합니다.
 
 
 </br>
 
-## 0. 소개
+## 0. 프로젝트 소개
 - 이 프로젝트는 미니게임 외 다양한 랜덤이벤트로 지루하지 않는 플레이를 줄길 수 있습니다.  
 - 게임을 개발하게 된 이유는 보드게임은 준비와 진행 과정이 번거로운 경우가 많습니다.
   이 게임은 다양한 미니게임과 자동 주사위, 말판 이동 기능을 통해 보다 간편하고 재미있게 즐길 수 있도록 제작했습니다.
@@ -23,21 +26,34 @@
 
 </br>
 
-## 2. 사용 기술
+
+## 2. 주요 기능
+- 회원 시스템 : 회원가입 / 로그인 , 사용자 정보(DB 저장 및 관리)
+- 게임 진행 : 주사위 굴리기, 팀 대전 방식, 턴 기반 진행
+- 미니 게임 : 수도 맞추기, 홀짝 게임, 업다운 게임, 넌센스 퀴즈
+  
+### 2.1 아키텍처(MVC)
+- Model : DAO, DTO를 통한 DB 연동 및 데이터 관리
+- View : 콘솔 기반 UI출력
+- Controller : 게임 로직과 뷰,모델 연결
+
+## 3. 사용 기술
 #### `Back-end`
-  - Java 11
-  - QueryDSL
-  - MySQL 11.2.0.2.0
+  - Language : Java 11
+  - IDE : Eclipse
+  - Database : Query XE
+  - Version Control : Git / GitHub
+
 
 </br>
 
-## 3. ERD 설계
+## 4. ERD 설계
 <img width="5258" height="3612" alt="Blank diagram - Page 1" src="https://github.com/user-attachments/assets/f4521cf5-8189-42ef-ae22-504b783cb82c" />
 <img width="1556" height="785" alt="image" src="https://github.com/user-attachments/assets/4bd82230-ad74-49f8-bc45-41d0d1f7fd50" />
 
 
 
-## 4. 핵심 기능
+## 5. 핵심 기능
 - 이 서비스의 핵심 기능은 회원관리 + 팀 대전 기반 랜덤 이벤트 보드게임 입니다.
 - 사용자는 로그인(회원등록)후 게임을 즐기기만 하면 됩니다 
 - 흐름도를 보면 게임이 어떻게 진행이되고 점수가 어떻게 오르는지 알 수 있습니다!  
@@ -51,54 +67,13 @@
 
 
 
-
-### 4.3. Controller
-
-![]<img width="204" height="148" alt="image" src="https://github.com/user-attachments/assets/682f787e-99ad-4b28-94b7-95e487b9cab6" />
-
-
-- **요청 처리** :pushpin: [코드 확인](https://github.com/JungHyung2/gitio.io/blob/d35d29b64c0e8b9653862bdcc1e6b997d2436ec9/index.html#L57C1-L57C202)
-  - Controller에서는 요청을 화면단에서 넘어온 요청을 받고, Service 계층에 로직 처리를 위임합니다.
-
-- **결과 응답** :pushpin: [코드 확인]()
-  - Service 계층에서 넘어온 로직 처리 결과(메세지)를 화면단에 응답해줍니다.
-
-### 4.4. Service
-
-![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/flow_service1.png)
-
-- **Http 프로토콜 추가 및 trim()** :pushpin: [코드 확인]()
-  - 사용자가 URL 입력 시 Http 프로토콜을 생략하거나 공백을 넣은 경우,  
-  올바른 URL이 될 수 있도록 Http 프로토콜을 추가해주고, 공백을 제거해줍니다.
-
-- **URL 접속 확인** :pushpin: [코드 확인]()
-  - 화면단에서 모양새만 확인한 URL이 실제 리소스로 연결되는지 HttpUrlConnection으로 테스트합니다.
-  - 이 때, 빠른 응답을 위해 Request Method를 GET이 아닌 HEAD를 사용했습니다.
-  - (HEAD 메소드는 GET 메소드의 응답 결과의 Body는 가져오지 않고, Header만 확인하기 때문에 GET 메소드에 비해 응답속도가 빠릅니다.)
-
-  ![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/flow_service2.png)
-
-- **Jsoup 이미지, 제목 파싱** :pushpin: [코드 확인]()
-  - URL 접속 확인결과 유효하면 Jsoup을 사용해서 입력된 URL의 이미지와 제목을 파싱합니다.
-  - 이미지는 Open Graphic Tag를 우선적으로 파싱하고, 없을 경우 첫 번째 이미지와 제목을 파싱합니다.
-  - 컨텐츠에 이미지가 없을 경우, 미리 설정해둔 기본 이미지를 사용하고, 제목이 없을 경우 생략합니다.
-
-
-### 4.5. Repository
-
-![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/flow_repo.png)
-
-- **컨텐츠 저장** :pushpin: [코드 확인]()
-  - URL 유효성 체크와 이미지, 제목 파싱이 끝난 컨텐츠는 DB에 저장합니다.
-  - 저장된 컨텐츠는 다시 Repository - Service - Controller를 거쳐 화면단에 송출됩니다.
-
 </div>
 </details>
 
 </br>
 
-## 5. 핵심 트러블 슈팅
-### 5.1. 컨텐츠 필터와 페이징 처리 문제
+## 7. 핵심 트러블 슈팅
+### 7.1. 컨텐츠 필터와 페이징 처리 문제
 - 저는 이 서비스가 페이스북이나 인스타그램 처럼 가볍게, 자주 사용되길 바라는 마음으로 개발했습니다.  
 때문에 페이징 처리도 무한 스크롤을 적용했습니다.
 
@@ -194,7 +169,7 @@ public Page<Post> findAllByTagName(String tagName, Pageable pageable) {
 
 </br>
 
-## 6. 그 외 트러블 슈팅
+## 8. 그 외 트러블 슈팅
 <details>
 <summary>npm run dev 실행 오류</summary>
 <div markdown="1">

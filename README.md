@@ -59,7 +59,7 @@
 
 
 ### 6.1. 전체 흐름
-![]<img width="804" height="557" alt="image" src="https://github.com/user-attachments/assets/723e2b09-a94a-4771-a787-6b3fe961b696" />
+<img width="804" height="557" alt="image" src="https://github.com/user-attachments/assets/723e2b09-a94a-4771-a787-6b3fe961b696" />
 
 
 

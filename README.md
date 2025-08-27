@@ -20,7 +20,7 @@
 
 ## 2. 사용 기술
 #### `Back-end`
-  - Java 8
+  - Java 11
   - Spring Boot 2.3
   - Gradle
   - Spring Data JPA
@@ -36,7 +36,8 @@
 </br>
 
 ## 3. ERD 설계
-![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/final_erd.png)
+![]<img width="5258" height="3612" alt="Blank diagram - Page 1" src="https://github.com/user-attachments/assets/f4521cf5-8189-42ef-ae22-504b783cb82c" />
+
 ![](https://github.com/JungHyung2/gitio.io/blob/master/assets/images/portfolio/p1.jpg)
 
 

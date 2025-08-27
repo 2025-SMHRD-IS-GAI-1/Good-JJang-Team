@@ -26,7 +26,7 @@
   - Spring Data JPA
   - QueryDSL
   - H2
-  - MySQL 5.7
+  - MySQL 11.2.0.2.0
   - Spring Security
   - Jsoup
 #### `Front-end`
@@ -38,13 +38,12 @@
 ## 3. ERD 설계
 ![]<img width="5258" height="3612" alt="Blank diagram - Page 1" src="https://github.com/user-attachments/assets/f4521cf5-8189-42ef-ae22-504b783cb82c" />
 
-![](https://github.com/JungHyung2/gitio.io/blob/master/assets/images/portfolio/p1.jpg)
 
 
 ## 4. 핵심 기능
-이 서비스의 핵심 기능은 컨텐츠 등록 기능입니다.  
-사용자는 단지 컨텐츠의 카테고리를 선택하고, URL만 입력하면 끝입니다.  
-이 단순한 기능의 흐름을 보면, 서비스가 어떻게 동작하는지 알 수 있습니다.  
+이 서비스의 핵심 기능은 회원관리 + 팀 대전 기반 랜덤 이벤트 보드게임 입니다.
+사용자는 로그인(회원등록)후 게임을 즐기기만 하면 됩니다 
+흐름도를 보면 게임이 어떻게 진행이되고 점수가 어떻게 오르는지 알 수 있습니다!  
 
 <details>
 <summary><b>핵심 기능 설명 펼치기</b></summary>

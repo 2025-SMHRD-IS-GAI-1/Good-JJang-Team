@@ -36,7 +36,7 @@
 </br>
 
 ## 3. ERD 설계
-![]<img width="5258" height="3612" alt="Blank diagram - Page 1" src="https://github.com/user-attachments/assets/f4521cf5-8189-42ef-ae22-504b783cb82c" />
+<img width="5258" height="3612" alt="Blank diagram - Page 1" src="https://github.com/user-attachments/assets/f4521cf5-8189-42ef-ae22-504b783cb82c" />
 
 
 

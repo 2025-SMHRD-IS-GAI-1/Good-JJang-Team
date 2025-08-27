@@ -33,6 +33,7 @@
 
 ## 3. ERD 설계
 <img width="5258" height="3612" alt="Blank diagram - Page 1" src="https://github.com/user-attachments/assets/f4521cf5-8189-42ef-ae22-504b783cb82c" />
+<img width="1556" height="785" alt="image" src="https://github.com/user-attachments/assets/4bd82230-ad74-49f8-bc45-41d0d1f7fd50" />
 
 
 
@@ -41,9 +42,6 @@
 - 사용자는 로그인(회원등록)후 게임을 즐기기만 하면 됩니다 
 - 흐름도를 보면 게임이 어떻게 진행이되고 점수가 어떻게 오르는지 알 수 있습니다!  
 
-<details>
-<summary><b>핵심 기능 설명 펼치기</b></summary>
-<div markdown="1">
 
 ### 4.1. 전체 흐름
 ![]<img width="804" height="557" alt="image" src="https://github.com/user-attachments/assets/723e2b09-a94a-4771-a787-6b3fe961b696" />

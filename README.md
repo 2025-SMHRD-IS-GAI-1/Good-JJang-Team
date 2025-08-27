@@ -170,38 +170,68 @@ public Page<Post> findAllByTagName(String tagName, Pageable pageable) {
 </br>
 
 ## 8. 그 외 트러블 슈팅
+
 <details>
-<summary>npm run dev 실행 오류</summary>
+<summary>DB 테이블 존재하지 않은 문제</summary>
 <div markdown="1">
 
-- Webpack-dev-server 버전을 3.0.0으로 다운그레이드로 해결
-- `$ npm install —save-dev webpack-dev-server@3.0.0`
+- 해결 방법 : FROM 테이블주소가  잘못되어 수정  
 
 </div>
 </details>
 
 <details>
-<summary>vue-devtools 크롬익스텐션 인식 오류 문제</summary>
+<summary>DB 접속 계정 오류</summary>
 <div markdown="1">
-  
-  - main.js 파일에 `Vue.config.devtools = true` 추가로 해결
-  - [https://github.com/vuejs/vue-devtools/issues/190](https://github.com/vuejs/vue-devtools/issues/190)
-  
+
+- 해결 방법  :  DB 접속 계정 정보가 맞지 않아 포트 값 수정
+- String url = "jdbc:oracle:thin:@project-db-cgi.smhrd.com:1524:xe";
+
 </div>
 </details>
 
 <details>
-<summary>ElementUI input 박스에서 `v-on:keyup.enter="메소드명"`이 정상 작동 안하는 문제</summary>
+<summary>DB 에 있는 point 데이터 추출 오류</summary>
 <div markdown="1">
-  
-  - `v-on:keyup.enter.native=""` 와 같이 .native 추가로 해결
-  
+
+- 해결 방법 : DB가 들어있는 DAO에서 꺼내지 않고 , MODEL에서 빼와서 데이터가 옮겨지지 않아 DAO에서 빼냄
+
 </div>
 </details>
 
 <details>
-<summary> Post 목록 출력시에 Member 객체 출력 에러 </summary>
+<summary>ASCII 스타일 명령 프롬프트</summary>
 <div markdown="1">
+
+- 해결 방법 : ascii 스타일 명령프롬포트 호환성 문제 확인 후 
+- 자바 표준 출력 스트림을 UTF-8로 래핑 system.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
+
+</div>
+</details>
+
+<details>
+<summary>ID 중복 로그인</summary>
+<div markdown="1">
+
+- 해결 방법 : 등록할때 입력한 닉네임이 팀에 존재하면 그 이후에 유저 등록 절차를 continue로 반복문을 중간에 끊어서 처음부터 다시 유저 등록 메뉴가 뜨게 만듬
+
+</div>
+</details>
+
+<details>
+<summary>플레이어 말 겹침 충돌</summary>
+<div markdown="1">
+
+-  해결 방법 : 예외사항을 처리할 코드작성하지 않아 try/catch문을 이용하여 예외사항 처리해줌
+
+</div>
+</details>
+
+<details>
+<summary>UpDownGameController 정답 확인 메소드 존재하지 않음</summary>
+<div markdown="1">
+
+- 해결 방법 : isCorrect(int userNum) < 메소드를 생성
   
   - 에러 메세지(500에러)
     - No serializer found for class org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationConfig.SerializationFeature.FAIL_ON_EMPTY_BEANS)
